@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Amit Sharma",
+    "age": 22,
+    "gender": "Male",
+    "flatNo": "A-203",
+    "phone": "9876543210",
+    "email": "amit.sharma@example.com",
+    "active": true,
+    "verified": false,
+    "joinDate": "2025-07-15",
+    "familyMembers": 4,
+    "vehicles": ["MH12AB1234", "MH12XY5678"],
+    "maintenanceDue": 1200,
+    "address": {
+      "wing": "A",
+      "floor": 2
+    }
+  },
+  {
+    "name": "Neha Singh",
+    "age": 21,
+    "gender": "Female",
+    "flatNo": "B-101",
+    "phone": "9123456780",
+    "email": "neha.singh@example.com",
+    "active": true,
+    "verified": true,
+    "joinDate": "2024-11-02",
+    "familyMembers": 3,
+    "vehicles": ["MH14CD9087"],
+    "maintenanceDue": 0,
+    "address": {
+      "wing": "B",
+      "floor": 1
+    }
+  },
+  {
+    "name": "Sanjay Verma",
+    "age": 24,
+    "gender": "Male",
+    "flatNo": "C-202",
+    "phone": "9988776655",
+    "email": "rahul.verma@example.com",
+    "active": false,
+    "verified": false,
+    "joinDate": "2023-05-21",
+    "familyMembers": 2,
+    "vehicles": [],
+    "maintenanceDue": 3500,
+    "address": {
+      "wing": "C",
+      "floor": 2
+    }
+  },
+  {
+    "name": "Priya Nair",
+    "age": 23,
+    "gender": "Female",
+    "flatNo": "A-105",
+    "phone": "9090909090",
+    "email": "priya.nair@example.com",
+    "active": true,
+    "verified": true,
+    "joinDate": "2022-09-10",
+    "familyMembers": 5,
+    "vehicles": ["MH12PQ1122", "MH12RS3344"],
+    "maintenanceDue": 800,
+    "address": {
+      "wing": "A",
+      "floor": 1
+    }
+  },
+  {
+    "name": "Sonal Patil",
+    "age": 21,
+    "gender": "Female",
+    "flatNo": "D-404",
+    "phone": "9011223344",
+    "email": "sonal.patil@example.com",
+    "active": true,
+    "verified": false,
+    "joinDate": "2025-01-05",
+    "familyMembers": 1,
+    "vehicles": [],
+    "maintenanceDue": 500,
+    "address": {
+      "wing": "D",
+      "floor": 4
+    }
+  },
+  {
+    "name": "Karan Mehta",
+    "age": 22,
+    "gender": "Male",
+    "flatNo": "B-303",
+    "phone": "8899776655",
+    "email": "karan.mehta@example.com",
+    "active": true,
+    "verified": true,
+    "joinDate": "2024-03-18",
+    "familyMembers": 4,
+    "vehicles": ["MH15TT7788"],
+    "maintenanceDue": 0,
+    "address": {
+      "wing": "B",
+      "floor": 3
+    }
+  }
+]
