@@ -21,13 +21,13 @@ Although MongoDB is schema-less, **data types still play a critical role** in re
 
 ## 📦 Core Data Types
 
-
-### 1. String  
-Used to store text values.
+### 
 
 ```js
-{name: "Sanjay Lade"}
 
+1. String  
+Used to store text values.
+{name: "Sanjay Lade"}
 
 2. Numbers
 MongoDB supports multiple numeric types.
