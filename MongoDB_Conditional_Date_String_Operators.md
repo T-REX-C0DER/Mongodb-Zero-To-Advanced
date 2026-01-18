@@ -223,3 +223,18 @@ String operators are used to modify, format, search, and analyze text data.
     replacement: "company.com"
   }
 }
+
+
+✅ 3.7 $split — Convert String to Array
+{ $split: ["$skills", ","] }
+
+
+✅ 3.8 $regexMatch — Pattern Matching
+{
+  $regexMatch: {
+    input: "$email",
+    regex: "@gmail.com$"
+  }
+}
+
+📌 Returns true/false.
