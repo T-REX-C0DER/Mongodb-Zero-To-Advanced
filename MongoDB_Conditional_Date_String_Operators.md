@@ -131,3 +131,48 @@ Example:
     day: { $dayOfMonth: "$createdAt" }
   }
 }
+
+
+✅ 2.3 $dateToString — Format Date
+{
+  $dateToString: { format: "%d-%m-%Y", date: "$createdAt" }
+}
+
+📌 Output → 18-01-2026
+
+
+
+✅ 2.4 $dateFromString — Convert String to Date
+{
+  $dateFromString: { dateString: "2026-01-18" }
+}
+
+
+
+✅ 2.5 $add, $subtract with Dates
+{
+  $project: {
+    nextWeek: { $add: ["$date", 7 * 24 * 60 * 60 * 1000] }
+  }
+}
+
+📌 Adds 7 days.
+
+
+
+✅ 2.6 $dateDiff — Difference Between Dates
+{
+  $dateDiff: {
+    startDate: "$start",
+    endDate: "$end",
+    unit: "day"
+  }
+}
+
+
+
+✅ 2.7 $currentDate — Store Current Date
+db.users.updateOne(
+  { _id: 1 },
+  { $currentDate: { lastLogin: true } }
+)
