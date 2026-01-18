@@ -39,6 +39,21 @@ db.students.aggregate([
     }
   }
 ])
-
-
 📌 If marks ≥ 40 → Pass, else → Fail
+
+
+
+✅ 1.2 $ifNull — Handle Null Values
+
+Returns a default value if the field is null or missing.
+Syntax:
+{ $ifNull: [ <expression>, <replacement> ] }
+
+Example:
+{
+  $project: {
+    email: { $ifNull: ["$email", "Not Provided"] }
+  }
+}
+
+📌 If email is null → “Not Provided”
