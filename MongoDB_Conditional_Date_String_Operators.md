@@ -42,7 +42,6 @@ db.students.aggregate([
 📌 If marks ≥ 40 → Pass, else → Fail
 
 
-
 ✅ 1.2 $ifNull — Handle Null Values
 
 Returns a default value if the field is null or missing.
@@ -57,7 +56,6 @@ Example:
 }
 
 📌 If email is null → “Not Provided”
-
 
 
 ✅ 1.3 $switch — Multiple Conditions (Like switch-case)
@@ -91,7 +89,6 @@ Example:
 }
 
 
-
 ✅ 1.4 $cmp — Compare Two Values
 
 Returns:
@@ -101,7 +98,6 @@ Returns:
 -1 if first < second
 
 { $cmp: ["$a", "$b"] }
-
 
 
 
@@ -159,7 +155,6 @@ Example:
 📌 Adds 7 days.
 
 
-
 ✅ 2.6 $dateDiff — Difference Between Dates
 {
   $dateDiff: {
@@ -168,7 +163,6 @@ Example:
     unit: "day"
   }
 }
-
 
 
 ✅ 2.7 $currentDate — Store Current Date
@@ -200,7 +194,6 @@ String operators are used to modify, format, search, and analyze text data.
 { $substrBytes: ["$name", 0, 4] }
 
 📌 Extracts substring.
-
 
 
 ✅ 3.4 $strLenBytes / $strLenCP
@@ -238,3 +231,8 @@ String operators are used to modify, format, search, and analyze text data.
 }
 
 📌 Returns true/false.
+
+✅ 3.9 $indexOfCP — Find Position
+{ $indexOfCP: ["$email", "@"] }
+
+📌 Returns position.
