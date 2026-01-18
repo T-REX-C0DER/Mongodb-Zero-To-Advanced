@@ -57,3 +57,47 @@ Example:
 }
 
 📌 If email is null → “Not Provided”
+
+
+
+✅ 1.3 $switch — Multiple Conditions (Like switch-case)
+
+Used when you have many conditions.
+
+{
+  $switch: {
+    branches: [
+      { case: <condition1>, then: <result1> },
+      { case: <condition2>, then: <result2> }
+    ],
+    default: <default_value>
+  }
+}
+
+Example:
+{
+  $project: {
+    grade: {
+      $switch: {
+        branches: [
+          { case: { $gte: ["$marks", 90] }, then: "A" },
+          { case: { $gte: ["$marks", 75] }, then: "B" },
+          { case: { $gte: ["$marks", 50] }, then: "C" }
+        ],
+        default: "Fail"
+      }
+    }
+  }
+}
+
+
+
+✅ 1.4 $cmp — Compare Two Values
+
+Returns:
+
+1 if first > second
+0 if equal
+-1 if first < second
+
+{ $cmp: ["$a", "$b"] }
