@@ -176,3 +176,34 @@ db.users.updateOne(
   { _id: 1 },
   { $currentDate: { lastLogin: true } }
 )
+
+
+🔹 3. STRING OPERATORS IN MONGODB
+
+String operators are used to modify, format, search, and analyze text data.
+
+
+✅ 3.1 $concat — Join Strings
+{
+  $project: {
+    fullName: { $concat: ["$firstName", " ", "$lastName"] }
+  }
+}
+
+
+✅ 3.2 $toUpper and $toLower
+{ $toUpper: "$name" }
+{ $toLower: "$email" }
+
+
+✅ 3.3 $substrBytes / $substrCP
+{ $substrBytes: ["$name", 0, 4] }
+
+📌 Extracts substring.
+
+
+
+✅ 3.4 $strLenBytes / $strLenCP
+{ $strLenCP: "$username" }
+
+📌 Returns string length.
