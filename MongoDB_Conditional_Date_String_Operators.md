@@ -101,3 +101,14 @@ Returns:
 -1 if first < second
 
 { $cmp: ["$a", "$b"] }
+
+
+
+
+🔹 2. DATE OPERATORS IN MONGODB
+
+Date operators are used to extract, compare, format, and manipulate date/time values.
+
+✅ 2.1 Date Creation
+new Date()
+ISODate("2025-01-01T10:00:00Z")
