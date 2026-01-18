@@ -207,3 +207,9 @@ String operators are used to modify, format, search, and analyze text data.
 { $strLenCP: "$username" }
 
 📌 Returns string length.
+
+
+✅ 3.5 $trim, $ltrim, $rtrim
+{ $trim: { input: "$name" } }
+
+📌 Removes spaces.
