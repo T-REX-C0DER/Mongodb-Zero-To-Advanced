@@ -112,3 +112,22 @@ Date operators are used to extract, compare, format, and manipulate date/time va
 ✅ 2.1 Date Creation
 new Date()
 ISODate("2025-01-01T10:00:00Z")
+
+
+✅ 2.2 Extracting Parts from Date
+
+$year =	Extract year
+$month =	Extract month
+$dayOfMonth	 = Day of month
+$hour	= Hour
+$minute= 	Minute
+$second	= Second
+$dayOfWeek	1 (Sunday) – 7 (Saturday)
+Example:
+{
+  $project: {
+    year: { $year: "$createdAt" },
+    month: { $month: "$createdAt" },
+    day: { $dayOfMonth: "$createdAt" }
+  }
+}
