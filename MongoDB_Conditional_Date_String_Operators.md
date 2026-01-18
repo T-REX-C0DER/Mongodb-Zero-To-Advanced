@@ -213,3 +213,13 @@ String operators are used to modify, format, search, and analyze text data.
 { $trim: { input: "$name" } }
 
 📌 Removes spaces.
+
+
+✅ 3.6 $replaceOne and $replaceAll
+{
+  $replaceAll: {
+    input: "$email",
+    find: "gmail.com",
+    replacement: "company.com"
+  }
+}
