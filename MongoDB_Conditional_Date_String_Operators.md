@@ -16,8 +16,8 @@ Create calculated fields
 Handle null or missing values
 Mostly used inside aggregation pipelines.
 
-✅ 1.1 $cond — If–Else Operator
 
+✅ 1.1 $cond — If–Else Operator
 Works like a ternary operator.
 Syntax:
 {
@@ -43,23 +43,19 @@ db.students.aggregate([
 
 
 ✅ 1.2 $ifNull — Handle Null Values
-
 Returns a default value if the field is null or missing.
 Syntax:
 { $ifNull: [ <expression>, <replacement> ] }
-
 Example:
 {
   $project: {
     email: { $ifNull: ["$email", "Not Provided"] }
   }
 }
-
 📌 If email is null → “Not Provided”
 
 
 ✅ 1.3 $switch — Multiple Conditions (Like switch-case)
-
 Used when you have many conditions.
 
 {
@@ -71,7 +67,6 @@ Used when you have many conditions.
     default: <default_value>
   }
 }
-
 Example:
 {
   $project: {
@@ -89,25 +84,23 @@ Example:
 }
 
 
+
 ✅ 1.4 $cmp — Compare Two Values
-
 Returns:
-
 1 if first > second
 0 if equal
 -1 if first < second
-
 { $cmp: ["$a", "$b"] }
 
 
 
 🔹 2. DATE OPERATORS IN MONGODB
-
 Date operators are used to extract, compare, format, and manipulate date/time values.
 
 ✅ 2.1 Date Creation
 new Date()
 ISODate("2025-01-01T10:00:00Z")
+
 
 
 ✅ 2.2 Extracting Parts from Date
@@ -127,6 +120,7 @@ Example:
     day: { $dayOfMonth: "$createdAt" }
   }
 }
+
 
 
 ✅ 2.3 $dateToString — Format Date
@@ -151,8 +145,8 @@ Example:
     nextWeek: { $add: ["$date", 7 * 24 * 60 * 60 * 1000] }
   }
 }
-
 📌 Adds 7 days.
+
 
 
 ✅ 2.6 $dateDiff — Difference Between Dates
@@ -172,8 +166,8 @@ db.users.updateOne(
 )
 
 
-🔹 3. STRING OPERATORS IN MONGODB
 
+🔹 3. STRING OPERATORS IN MONGODB
 String operators are used to modify, format, search, and analyze text data.
 
 
@@ -185,9 +179,11 @@ String operators are used to modify, format, search, and analyze text data.
 }
 
 
+
 ✅ 3.2 $toUpper and $toLower
 { $toUpper: "$name" }
 { $toLower: "$email" }
+
 
 
 ✅ 3.3 $substrBytes / $substrCP
