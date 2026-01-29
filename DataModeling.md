@@ -103,3 +103,59 @@ Disadvantages
 Requires $lookup
 Slightly slower reads
 More complex queries
+
+
+
+🔹 5. When to Embed vs Reference
+
+Embed when:
+
+Data is frequently read together
+One‑to‑few relationship
+Data does not grow infinitely
+Reference when:
+One‑to‑many (large)
+Many‑to‑many
+Data changes often
+Collections are used independently
+
+
+
+🔹 6. Schema Design Best Practices
+
+Design based on application queries, not real‑world objects
+Avoid massive arrays
+Limit document growth
+Use proper indexes
+Keep documents meaningful
+Avoid deep nesting
+Store computed data if frequently needed
+
+
+
+🔹 7. Example Data Models
+▶ Embedded Example (Blog System)
+{
+  "title": "MongoDB",
+  "author": "Admin",
+  "comments": [
+    { "user": "A", "msg": "Good" },
+    { "user": "B", "msg": "Helpful" }
+  ]
+}
+▶ Referenced Example (E‑commerce)
+
+Users:
+
+{ "_id": 1, "name": "User1" }
+
+Orders:
+
+{ "_id": 301, "userId": 1, "total": 2000 }
+
+
+🔷 $lookup in MongoDB
+🔹 8. What is $lookup?
+
+$lookup is an aggregation stage that performs a left outer join between two collections.
+It allows you to combine data from multiple collections into a single result.
