@@ -50,3 +50,98 @@ Fast sorting
 Each index stores:
 Indexed field value
 Pointer to the actual document
+
+
+🔷 5. Creating Indexes
+▶ Single Field Index
+db.users.createIndex({ name: 1 })
+
+1 → ascending order -1 → descending order
+
+▶ Compound Index
+
+Index on multiple fields:
+
+db.users.createIndex({ age: 1, city: 1 })
+
+Important rule: Prefix Rule
+
+This index supports:
+
+age
+
+age + city
+
+But NOT:
+
+city alone
+
+
+
+🔷 6. Types of Indexes in MongoDB
+
+✅ 6.1 Single Field Index
+
+Index on one field.
+
+Use when filtering frequently on one field.
+
+✅ 6.2 Compound Index
+
+Index on multiple fields.
+
+Used when queries include multiple conditions.
+
+Example:
+
+db.orders.createIndex({ userId: 1, createdAt: -1 })
+
+✅ 6.3 Multikey Index
+
+Automatically created when indexing an array field.
+
+Example:
+
+db.students.createIndex({ skills: 1 })
+
+Supports searching inside arrays.
+
+✅ 6.4 Text Index
+
+Used for text searching.
+
+db.posts.createIndex({ title: "text", content: "text" })
+
+Search query:
+
+db.posts.find({ $text: { $search: "mongodb index" } })
+
+✅ 6.5 Hashed Index
+
+Used for hash‑based equality lookups.
+
+db.users.createIndex({ email: "hashed" })
+
+Mostly used in sharding.
+
+✅ 6.6 Geospatial Index
+
+Used for location‑based queries.
+
+db.places.createIndex({ location: "2dsphere" })
+
+Supports:
+
+$near
+
+$geoWithin
+
+$geoIntersects
+
+✅ 6.7 Wildcard Index
+
+Indexes unknown or dynamic fields.
+
+db.logs.createIndex({ "data.$**": 1 })
+
+Used in flexible schemas.
