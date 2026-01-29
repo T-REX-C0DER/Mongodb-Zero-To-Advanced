@@ -37,3 +37,69 @@ Fields
 Data types
 Relationships
 Nesting structure
+
+
+🔹 3. Types of Relationships in MongoDB
+
+MongoDB mainly supports:
+
+One‑to‑One
+One‑to‑Many
+Many‑to‑Many
+
+Each can be modeled using:
+
+Embedded documents
+Referenced documents
+
+
+
+🔹 4. Embedding vs Referencing
+✅ Embedded Data Model
+
+Store related data inside a single document.
+
+Example:
+
+{
+  "_id": 101,
+  "name": "Amit",
+  "address": {
+    "city": "Pune",
+    "pincode": 411001
+  }
+}
+Advantages
+
+Faster reads (no joins)
+Atomic updates
+Simple queries
+Disadvantages
+Document size limit (16MB)
+Data duplication
+Harder updates for repeated data
+
+
+✅ Referenced Data Model
+
+Store related data in different collections and link using IDs.
+
+Example:
+
+Users collection:
+
+{ "_id": 1, "name": "Amit" }
+
+Orders collection:
+
+{ "_id": 201, "userId": 1, "product": "Mouse" }
+
+Advantages
+
+Avoids duplication
+Better for large or growing data
+Flexible relationships
+Disadvantages
+Requires $lookup
+Slightly slower reads
+More complex queries
