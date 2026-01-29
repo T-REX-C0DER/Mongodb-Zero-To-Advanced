@@ -145,3 +145,127 @@ Indexes unknown or dynamic fields.
 db.logs.createIndex({ "data.$**": 1 })
 
 Used in flexible schemas.
+
+🔷 7. Unique Index
+
+Ensures no duplicate values.
+
+db.users.createIndex({ email: 1 }, { unique: true })
+
+Prevents duplicate records.
+
+🔷 8. Sparse Index
+
+Indexes only documents that contain the indexed field.
+
+db.users.createIndex({ phone: 1 }, { sparse: true })
+🔷 9. Partial Index
+
+Indexes only documents that match a condition.
+
+db.orders.createIndex(
+  { status: 1 },
+  { partialFilterExpression: { status: "ACTIVE" } }
+)
+
+Improves performance and reduces index size.
+
+🔷 10. TTL Index (Time To Live)
+
+Automatically deletes documents after a specific time.
+
+db.sessions.createIndex({ createdAt: 1 }, { expireAfterSeconds: 3600 })
+
+Used for:
+
+Sessions
+
+OTPs
+
+Logs
+
+🔷 11. Indexes and Sorting
+
+MongoDB can use indexes to avoid in‑memory sorting.
+
+Example:
+
+db.users.find().sort({ age: 1 })
+
+If age is indexed → Fast sorting
+
+🔷 12. Indexes and Performance
+
+Indexes improve:
+
+find()
+
+sort()
+
+range queries
+
+aggregation pipelines
+
+But slow down:
+
+insert
+
+update
+
+delete
+
+Balance is required.
+
+🔷 13. Explain Plan
+
+To check whether MongoDB is using indexes:
+
+db.users.find({ age: 20 }).explain("executionStats")
+
+Look for:
+
+IXSCAN → index scan
+
+COLLSCAN → collection scan
+
+🔷 14. Index Best Practices
+
+Index fields used in filters
+
+Index fields used in sorting
+
+Avoid too many indexes
+
+Use compound indexes smartly
+
+Use partial indexes when possible
+
+Always index foreign keys
+
+Monitor index usage
+
+🔷 15. Common Mistakes
+
+Over‑indexing
+
+Wrong field order in compound index
+
+Indexing low‑cardinality fields unnecessarily
+
+Forgetting to index join fields
+
+🔷 16. Real‑World Examples
+
+Email → unique index
+
+userId → join index
+
+createdAt → sorting index
+
+location → geo index
+
+logs.timestamp → TTL index
+
+🔷 17. Summary
+
+✔ Indexes make queries fast ✔ They are critical for large databases ✔ Choose index type carefully ✔ Always test with explain()
