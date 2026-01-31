@@ -15,13 +15,6 @@ Make sure you have:
 
 Start MongoDB shell:
 
-```bash
-mongosh
-Select / create a database:
-use societyDB
-Create or switch to a collection:
-db.residents
-
 
 🟢 CREATE – Insert Operations
 Used to add new documents into a collection.
